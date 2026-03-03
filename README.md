@@ -2,6 +2,8 @@
 
 Portfolio estático construido con [Astro](https://astro.build): diseño atrevido (gradientes, animaciones suaves), responsive y máximo rendimiento (HTML/CSS por defecto, poco JavaScript solo para el efecto typing del Hero).
 
+**Ver en vivo:** [https://elgsusete.github.io/astroPortfolio/](https://elgsusete.github.io/astroPortfolio/)
+
 ## Características
 
 - **Responsive**: topbar en una sola línea en móvil, hero con márgenes y texto centrado, contacto en grid 2×2 con botones uniformes.

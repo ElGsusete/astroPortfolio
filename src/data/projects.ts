@@ -11,7 +11,7 @@ export const projects: Project[] = [
   {
     title: "GameLog",
     description: "Biblioteca personal de videojuegos: registra, puntúa y consulta tu colección. Login con Steam.",
-    href: "https://Gsuse.github.io/gameLibrary/",
+    href: "https://elgsusete.github.io/gameLibrary/",
     tags: ["React", "TypeScript", "Vite", "Tailwind"],
   },
   {
