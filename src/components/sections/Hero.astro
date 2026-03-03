@@ -4,7 +4,7 @@
 
 <section
   id="hero"
-  class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pt-24"
+  class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 pt-24 sm:px-6 md:px-8"
 >
   <!-- Animated gradient background -->
   <div
@@ -29,7 +29,7 @@
   >
   </div>
 
-  <div class="relative z-10 mx-auto max-w-4xl text-center">
+  <div class="relative z-10 w-full max-w-4xl mx-auto text-center">
     <!-- Cabecera en 2 líneas, altura fija para no afectar al texto de abajo -->
     <div
       class="hero-header animate-fade-in-up mb-8"
@@ -50,11 +50,11 @@
       </h1>
     </div>
     <p
-      class="animate-fade-in-up mb-10 max-w-2xl text-xl leading-relaxed text-zinc-300"
+      class="animate-fade-in-up mx-auto mb-10 max-w-2xl text-center text-xl leading-relaxed text-zinc-300"
       style="animation-delay: 0.2s;"
     >
-      Desarrollador Frontend especializado en React. Código limpio, escalabilidad
-      y en búsqueda de nuevos retos.
+      Desarrollador Frontend especializado en React. Código limpio,
+      escalabilidad y en búsqueda de nuevos retos.
     </p>
     <div
       class="animate-fade-in-up flex flex-wrap justify-center gap-4"
@@ -80,6 +80,10 @@
   /* Cabecera: 2 líneas siempre, altura fija para no afectar al texto fijo de abajo */
   .hero-header {
     min-height: 4.5rem;
+    overflow: hidden;
+  }
+  .hero-title {
+    overflow: hidden;
   }
   @media (min-width: 640px) {
     .hero-header {
@@ -91,17 +95,30 @@
       min-height: 5.5rem;
     }
   }
-  .hero-line-1,
-  .hero-line-2 {
+  .hero-line-1 {
     display: block;
     text-align: center;
   }
-  /* Reservar ancho fijo para la segunda línea; centrada */
-  .typing-wrapper {
-    display: inline-block;
-    min-width: 14ch;
+  /* Segunda línea: flex para centrar siempre el texto que cambia */
+  .hero-line-2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     text-align: center;
-    vertical-align: bottom;
+  }
+  .typing-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: baseline;
+    min-width: 10ch;
+    min-height: 1.15em;
+    max-width: 100%;
+    text-align: center;
+  }
+  @media (min-width: 640px) {
+    .typing-wrapper {
+      min-width: 14ch;
+    }
   }
   /* Cursor de escritura: barra vertical que parpadea */
   .typing-cursor {

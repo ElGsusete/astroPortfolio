@@ -21,12 +21,29 @@
 
   --font-sans: "DM Sans", system-ui, sans-serif;
   --font-display: "Space Grotesk", system-ui, sans-serif;
+
+  /* Colores por tipo de contacto (paleta del sitio) */
+  --color-contact-email: #6366f1;
+  --color-contact-email-hover: #4f46e5;
+  --color-contact-linkedin: #8b5cf6;
+  --color-contact-linkedin-hover: #7c3aed;
+  --color-contact-github: #52525b;
+  --color-contact-github-hover: #71717a;
+  --color-contact-whatsapp: #25d366;
+  --color-contact-whatsapp-hover: #20bd5a;
 }
 
 /* Keyframes for bold design */
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes fade-in-up {
@@ -34,6 +51,7 @@
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -41,14 +59,31 @@
 }
 
 @keyframes blob-float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(20px, -20px) scale(1.05); }
-  66% { transform: translate(-15px, 15px) scale(0.98); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(20px, -20px) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-15px, 15px) scale(0.98);
+  }
 }
 
 @keyframes glow-pulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Utility classes for animations */

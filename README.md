@@ -1,6 +1,13 @@
 # Portfolio con Astro
 
-Portfolio estático construido con [Astro](https://astro.build): diseño atrevido (gradientes, animaciones suaves) y máximo rendimiento (HTML/CSS por defecto, poco o ningún JavaScript).
+Portfolio estático construido con [Astro](https://astro.build): diseño atrevido (gradientes, animaciones suaves), responsive y máximo rendimiento (HTML/CSS por defecto, poco JavaScript solo para el efecto typing del Hero).
+
+## Características
+
+- **Responsive**: topbar en una sola línea en móvil, hero con márgenes y texto centrado, contacto en grid 2×2 con botones uniformes.
+- **Hero**: animación de texto que cambia (typing) con altura fija para evitar saltos de layout.
+- **Proyectos**: tarjetas normales o tipo "En construcción" (estilo cinta amarilla y negra con cruz).
+- **Contacto**: botones con icono y color por tipo (Email, LinkedIn, GitHub, WhatsApp), enlaces `mailto`, perfiles y `wa.me`.
 
 ## Estructura del proyecto
 
@@ -38,8 +45,8 @@ src/
 
 - **Hero**: En `src/components/sections/Hero.astro` cambia el nombre y el subtítulo.
 - **Sobre mí**: En `src/components/sections/About.astro` edita el texto del bloque.
-- **Proyectos**: En `src/data/projects.ts` sustituye el array por tus proyectos (título, descripción, enlace, tags).
-- **Contacto**: En `src/components/sections/Contact.astro` pon tu email real y las URLs de LinkedIn y GitHub.
+- **Proyectos**: En `src/data/projects.ts` sustituye el array por tus proyectos (título, descripción, enlace, tags). Puedes usar `underConstruction: true` para tarjetas tipo "En construcción".
+- **Contacto**: En `src/components/sections/Contact.astro` configura email, LinkedIn, GitHub y WhatsApp (enlaces e iconos; los colores por tipo están en `src/styles/global.css` como `--color-contact-*`).
 
 ## Stack
 

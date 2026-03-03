@@ -4,23 +4,55 @@ import { ViewTransitions } from "astro:transitions";
 import "../../styles/global.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <BaseHead />
     <ViewTransitions />
   </head>
-  <body class="min-h-screen bg-[var(--color-surface)] text-[var(--color-text)] antialiased" style="font-family: var(--font-sans);">
-    <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[var(--color-surface)]/80 backdrop-blur-md">
-      <nav class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6" aria-label="Principal">
-        <a href="#hero" class="text-lg font-semibold tracking-tight" style="font-family: var(--font-display);">
+  <body
+    class="min-h-screen bg-[var(--color-surface)] text-[var(--color-text)] antialiased"
+    style="font-family: var(--font-sans);"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[var(--color-surface)]/80 backdrop-blur-md"
+    >
+      <nav
+        class="mx-auto flex max-w-6xl flex-nowrap items-center justify-between gap-2 overflow-x-auto px-3 py-3 sm:gap-4 sm:px-6 sm:py-4 sm:overflow-visible"
+        aria-label="Principal"
+      >
+        <a
+          href="#hero"
+          class="shrink-0 text-base font-semibold tracking-tight sm:text-lg"
+          style="font-family: var(--font-display);"
+        >
           Portfolio
         </a>
-        <ul class="flex flex-wrap justify-end gap-4 sm:gap-8">
-          <li><a href="#hero" class="text-sm text-zinc-400 transition hover:text-white">Inicio</a></li>
-          <li><a href="#sobre-mi" class="text-sm text-zinc-400 transition hover:text-white">Sobre mí</a></li>
-          <li><a href="#proyectos" class="text-sm text-zinc-400 transition hover:text-white">Proyectos</a></li>
-          <li><a href="#contacto" class="text-sm text-zinc-400 transition hover:text-white">Contacto</a></li>
+        <ul class="flex shrink-0 flex-nowrap justify-end gap-2 sm:gap-8">
+          <li>
+            <a
+              href="#hero"
+              class="whitespace-nowrap text-xs text-zinc-400 transition hover:text-white sm:text-sm"
+              >Inicio</a>
+          </li>
+          <li>
+            <a
+              href="#sobre-mi"
+              class="whitespace-nowrap text-xs text-zinc-400 transition hover:text-white sm:text-sm"
+              >Sobre mí</a>
+          </li>
+          <li>
+            <a
+              href="#proyectos"
+              class="whitespace-nowrap text-xs text-zinc-400 transition hover:text-white sm:text-sm"
+              >Proyectos</a>
+          </li>
+          <li>
+            <a
+              href="#contacto"
+              class="whitespace-nowrap text-xs text-zinc-400 transition hover:text-white sm:text-sm"
+              >Contacto</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -29,3 +61,14 @@ import "../../styles/global.css";
     </main>
   </body>
 </html>
+
+<style>
+  /* En móvil, si el nav hace scroll horizontal, ocultar la barra */
+  header nav {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  header nav::-webkit-scrollbar {
+    display: none;
+  }
+</style>
