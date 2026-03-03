@@ -1,0 +1,32 @@
+---
+// Sobre mí: fondo distinto, tarjeta con texto, opcional imagen
+---
+
+<section id="sobre-mi" class="relative scroll-mt-24 bg-[var(--color-surface-light)] py-24 px-6">
+  <div
+    class="absolute inset-0 opacity-30"
+    style="background: var(--gradient-section-about);"
+    aria-hidden="true"
+  />
+  <div class="relative z-10 mx-auto max-w-4xl">
+    <h2
+      class="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl"
+      style="font-family: var(--font-display); background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; color: transparent;"
+    >
+      Sobre mí
+    </h2>
+    <div
+      class="rounded-2xl border border-white/10 p-8 shadow-2xl backdrop-blur-sm md:p-12"
+      style="background: var(--gradient-card);"
+    >
+      <p class="mb-6 text-lg leading-relaxed text-zinc-300">
+        Soy desarrollador con enfoque en interfaces rápidas y bien diseñadas. Me gusta combinar
+        rendimiento y estética: sitios que cargan al instante y que se disfrutan visualmente.
+      </p>
+      <p class="text-lg leading-relaxed text-zinc-300">
+        Este portfolio está hecho con Astro para aprovechar al máximo la velocidad y el contenido
+        estático, con un toque atrevido en el diseño.
+      </p>
+    </div>
+  </div>
+</section>

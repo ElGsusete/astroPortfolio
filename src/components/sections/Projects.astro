@@ -1,0 +1,43 @@
+---
+import { projects } from "../../data/projects";
+---
+
+<section id="proyectos" class="relative scroll-mt-24 py-24 px-6">
+  <div
+    class="absolute inset-0 opacity-40"
+    style="background: var(--gradient-section-projects);"
+    aria-hidden="true"
+  />
+  <div class="relative z-10 mx-auto max-w-6xl">
+    <h2
+      class="mb-14 text-center text-3xl font-bold tracking-tight sm:text-4xl"
+      style="font-family: var(--font-display); background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; color: transparent;"
+    >
+      Proyectos
+    </h2>
+    <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        projects.map((project) => (
+          <li>
+            <a
+              href={project.href}
+              class="group block rounded-2xl border border-white/10 bg-[var(--color-surface-light)]/80 p-6 shadow-lg backdrop-blur-sm transition hover:border-[var(--color-primary)]/50 hover:shadow-[var(--color-primary)]/20 hover:shadow-xl"
+            >
+              <h3 class="mb-2 text-xl font-semibold text-white transition group-hover:text-[var(--color-accent-light)]" style="font-family: var(--font-display);">
+                {project.title}
+              </h3>
+              <p class="mb-4 text-zinc-400">{project.description}</p>
+              <div class="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-zinc-300">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

@@ -1,43 +1,54 @@
-# Astro Starter Kit: Minimal
+# Portfolio con Astro
 
-```sh
-npm create astro@latest -- --template minimal
+Portfolio estático construido con [Astro](https://astro.build): diseño atrevido (gradientes, animaciones suaves) y máximo rendimiento (HTML/CSS por defecto, poco o ningún JavaScript).
+
+## Estructura del proyecto
+
+```
+src/
+├── components/
+│   ├── layout/
+│   │   ├── BaseHead.astro    # Meta, preload de fuentes
+│   │   └── SiteLayout.astro  # Nav + layout principal
+│   └── sections/
+│       ├── Hero.astro
+│       ├── About.astro
+│       ├── Projects.astro
+│       └── Contact.astro
+├── data/
+│   └── projects.ts           # Datos de proyectos (editar aquí)
+├── layouts/
+│   └── MainLayout.astro
+├── pages/
+│   └── index.astro           # Página única con las 4 secciones
+└── styles/
+    └── global.css            # Variables, gradientes, keyframes
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Comandos
 
-## 🚀 Project Structure
+| Comando           | Acción                              |
+| ----------------- | ----------------------------------- |
+| `npm install`     | Instalar dependencias               |
+| `npm run dev`     | Servidor de desarrollo (localhost:4321) |
+| `npm run build`   | Generar sitio estático en `./dist/` |
+| `npm run preview` | Previsualizar el build localmente   |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Cómo personalizarlo
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **Hero**: En `src/components/sections/Hero.astro` cambia el nombre y el subtítulo.
+- **Sobre mí**: En `src/components/sections/About.astro` edita el texto del bloque.
+- **Proyectos**: En `src/data/projects.ts` sustituye el array por tus proyectos (título, descripción, enlace, tags).
+- **Contacto**: En `src/components/sections/Contact.astro` pon tu email real y las URLs de LinkedIn y GitHub.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Stack
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **Astro** – Sitio estático
+- **Tailwind CSS** – Estilos y utilidades
+- **View Transitions** – Transiciones entre páginas (incluidas en el layout)
+- **CSS puro** – Animaciones (gradientes, blobs, fade-in) sin librerías extra
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Documentación
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Astro](https://docs.astro.build)
+- [Tailwind CSS](https://tailwindcss.com/docs)

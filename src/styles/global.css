@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* Design tokens: bold palette + gradients */
+:root {
+  --color-primary: #6366f1;
+  --color-primary-dark: #4f46e5;
+  --color-accent: #ec4899;
+  --color-accent-light: #f472b6;
+  --color-surface: #0f0f14;
+  --color-surface-light: #1a1a24;
+  --color-text: #f4f4f5;
+  --color-text-muted: #a1a1aa;
+
+  --gradient-hero: linear-gradient(135deg, #6366f1 0%, #8b5cf6 35%, #ec4899 70%, #f43f5e 100%);
+  --gradient-hero-subtle: linear-gradient(180deg, rgba(99, 102, 241, 0.15) 0%, rgba(236, 72, 153, 0.08) 50%, transparent 100%);
+  --gradient-text: linear-gradient(135deg, #a5b4fc 0%, #e879f9 50%, #fda4af 100%);
+  --gradient-card: linear-gradient(145deg, rgba(26, 26, 36, 0.9) 0%, rgba(15, 15, 20, 0.95) 100%);
+  --gradient-section-about: linear-gradient(180deg, #0f0f14 0%, #1a1a24 100%);
+  --gradient-section-projects: linear-gradient(180deg, #1a1a24 0%, #0f0f14 100%);
+  --gradient-section-contact: linear-gradient(180deg, #0f0f14 0%, #1e1e2e 100%);
+
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+}
+
+/* Keyframes for bold design */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blob-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -20px) scale(1.05); }
+  66% { transform: translate(-15px, 15px) scale(0.98); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Utility classes for animations */
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out forwards;
+}
+
+.animate-blob {
+  animation: blob-float 12s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
