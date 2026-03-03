@@ -30,18 +30,31 @@
   </div>
 
   <div class="relative z-10 mx-auto max-w-4xl text-center">
-    <h1
-      class="animate-fade-in-up mb-6 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl"
-      style="font-family: var(--font-display); background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; color: transparent; animation-delay: 0.1s;"
+    <!-- Cabecera en 2 líneas, altura fija para no afectar al texto de abajo -->
+    <div
+      class="hero-header animate-fade-in-up mb-8"
+      style="animation-delay: 0.1s;"
     >
-      Hola, soy Jesús
-    </h1>
+      <h1
+        class="hero-title text-5xl font-bold leading-tight tracking-tight sm:text-6xl md:text-7xl md:leading-tight"
+        style="font-family: var(--font-display); background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; color: transparent;"
+      >
+        <span class="hero-line-1">Hola, soy</span>
+        <span class="hero-line-2">
+          <span class="typing-wrapper"
+            ><span id="hero-typing" aria-live="polite">Jesús</span><span
+              class="typing-cursor"
+              aria-hidden="true"></span></span
+          >
+        </span>
+      </h1>
+    </div>
     <p
-      class="animate-fade-in-up mb-10 max-w-2xl text-xl text-zinc-300"
+      class="animate-fade-in-up mb-10 max-w-2xl text-xl leading-relaxed text-zinc-300"
       style="animation-delay: 0.2s;"
     >
-      Desarrollador con pasión por crear experiencias web rápidas y con
-      personalidad.
+      Desarrollador Frontend especializado en React. Código limpio, escalabilidad
+      y en búsqueda de nuevos retos.
     </p>
     <div
       class="animate-fade-in-up flex flex-wrap justify-center gap-4"
@@ -62,3 +75,88 @@
     </div>
   </div>
 </section>
+
+<style>
+  /* Cabecera: 2 líneas siempre, altura fija para no afectar al texto fijo de abajo */
+  .hero-header {
+    min-height: 4.5rem;
+  }
+  @media (min-width: 640px) {
+    .hero-header {
+      min-height: 5rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .hero-header {
+      min-height: 5.5rem;
+    }
+  }
+  .hero-line-1,
+  .hero-line-2 {
+    display: block;
+    text-align: center;
+  }
+  /* Reservar ancho fijo para la segunda línea; centrada */
+  .typing-wrapper {
+    display: inline-block;
+    min-width: 14ch;
+    text-align: center;
+    vertical-align: bottom;
+  }
+  /* Cursor de escritura: barra vertical que parpadea */
+  .typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.85em;
+    margin-left: 2px;
+    vertical-align: middle;
+    background: var(--color-accent-light);
+    border-radius: 1px;
+    animation: cursor-blink 0.8s step-end infinite;
+  }
+  @keyframes cursor-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  const phrases = ["Jesús", "desarrollador", "frontend", "React"];
+  const el = document.getElementById("hero-typing");
+  if (!el) throw new Error("hero-typing not found");
+
+  const typeSpeed = 100;
+  const pauseBeforeDelete = 2000;
+  const deleteSpeed = 60;
+
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function tick() {
+    const current = phrases[phraseIndex];
+    if (isDeleting) {
+      el!.textContent = current.slice(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        setTimeout(tick, typeSpeed * 2);
+        return;
+      }
+      setTimeout(tick, deleteSpeed);
+    } else {
+      el!.textContent = current.slice(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === current.length) {
+        isDeleting = true;
+        setTimeout(tick, pauseBeforeDelete);
+        return;
+      }
+      setTimeout(tick, typeSpeed);
+    }
+  }
+
+  setTimeout(tick, 800);
+</script>

@@ -4,25 +4,28 @@ export interface Project {
   href: string;
   image?: string;
   tags: string[];
+  underConstruction?: boolean;
 }
 
 export const projects: Project[] = [
   {
-    title: "Proyecto ejemplo 1",
-    description: "Una aplicación o sitio que muestra tus habilidades. Sustituye por tu proyecto real.",
-    href: "#",
-    tags: ["Astro", "Tailwind", "TypeScript"],
+    title: "GameLog",
+    description: "Biblioteca personal de videojuegos: registra, puntúa y consulta tu colección. Login con Steam.",
+    href: "https://Gsuse.github.io/gameLibrary/",
+    tags: ["React", "TypeScript", "Vite", "Tailwind"],
   },
   {
-    title: "Proyecto ejemplo 2",
-    description: "Descripción breve del segundo proyecto. Enlace a demo o repo.",
+    title: "En construcción",
+    description: "Nuevo proyecto en desarrollo. Próximamente más información.",
     href: "#",
-    tags: ["React", "API"],
+    tags: ["Próximamente"],
+    underConstruction: true,
   },
   {
-    title: "Proyecto ejemplo 3",
-    description: "Tercer proyecto con tecnologías que domines.",
+    title: "En construcción",
+    description: "Otro proyecto en desarrollo. Próximamente más información.",
     href: "#",
-    tags: ["Vue", "CSS"],
+    tags: ["Próximamente"],
+    underConstruction: true,
   },
 ];
