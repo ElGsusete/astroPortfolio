@@ -8,7 +8,7 @@ Portfolio estático construido con [Astro](https://astro.build): diseño atrevid
 
 - **Responsive**: topbar en una sola línea en móvil, hero con márgenes y texto centrado, contacto en grid 2×2 con botones uniformes.
 - **Hero**: animación de texto que cambia (typing) con altura fija para evitar saltos de layout.
-- **Proyectos**: tarjetas normales o tipo "En construcción" (estilo cinta amarilla y negra con cruz).
+- **Proyectos**: tarjetas con enlace a cada repo o demo. Actualmente: [GameLog](https://elgsusete.github.io/gameLibrary/), [F1 Wordle](https://elgsusete.github.io/F1-Wordle/) (Wordle de pilotos F1) y [F1APIDatabase](https://github.com/ElGsusete/F1APIDatabase) (API Go + MongoDB); los datos se editan en `src/data/projects.ts`.
 - **Contacto**: botones con icono y color por tipo (Email, LinkedIn, GitHub, WhatsApp), enlaces `mailto`, perfiles y `wa.me`.
 
 ## Estructura del proyecto
