@@ -11,7 +11,12 @@
   --color-text: #f4f4f5;
   --color-text-muted: #a1a1aa;
 
+  /* Variantes del hero para animación que cambia entre colores (misma temática) */
   --gradient-hero: linear-gradient(135deg, #6366f1 0%, #8b5cf6 35%, #ec4899 70%, #f43f5e 100%);
+  --gradient-hero-1: linear-gradient(135deg, #4338ca 0%, #6366f1 40%, #7c3aed 100%);
+  --gradient-hero-2: linear-gradient(135deg, #5b21b6 0%, #8b5cf6 35%, #a855f7 70%, #d946ef 100%);
+  --gradient-hero-3: linear-gradient(135deg, #7c3aed 0%, #c026d3 40%, #ec4899 80%, #f43f5e 100%);
+  --gradient-hero-4: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
   --gradient-hero-subtle: linear-gradient(180deg, rgba(99, 102, 241, 0.15) 0%, rgba(236, 72, 153, 0.08) 50%, transparent 100%);
   --gradient-text: linear-gradient(135deg, #a5b4fc 0%, #e879f9 50%, #fda4af 100%);
   --gradient-card: linear-gradient(145deg, rgba(26, 26, 36, 0.9) 0%, rgba(15, 15, 20, 0.95) 100%);
@@ -44,6 +49,35 @@
   50% {
     background-position: 100% 50%;
   }
+}
+
+/* Hero: ciclar entre distintos gradientes; transiciones largas para crossfade suave */
+@keyframes hero-gradient-cycle-1 {
+  0%, 15% { opacity: 0.9; }
+  28% { opacity: 0; }
+  70% { opacity: 0; }
+  82%, 100% { opacity: 0.9; }
+}
+@keyframes hero-gradient-cycle-2 {
+  0%, 15% { opacity: 0; }
+  28% { opacity: 0.9; }
+  40% { opacity: 0.9; }
+  53% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes hero-gradient-cycle-3 {
+  0%, 40% { opacity: 0; }
+  53% { opacity: 0.9; }
+  65% { opacity: 0.9; }
+  78% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes hero-gradient-cycle-4 {
+  0%, 65% { opacity: 0; }
+  78% { opacity: 0.9; }
+  82% { opacity: 0.9; }
+  92% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 @keyframes fade-in-up {
@@ -91,6 +125,17 @@
   background-size: 200% 200%;
   animation: gradient-shift 8s ease infinite;
 }
+
+.hero-bg-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.01s; /* no flash on loop */
+}
+.hero-bg-layer-1 { background: var(--gradient-hero-1); animation: hero-gradient-cycle-1 22s ease-in-out infinite; }
+.hero-bg-layer-2 { background: var(--gradient-hero-2); animation: hero-gradient-cycle-2 22s ease-in-out infinite; }
+.hero-bg-layer-3 { background: var(--gradient-hero-3); animation: hero-gradient-cycle-3 22s ease-in-out infinite; }
+.hero-bg-layer-4 { background: var(--gradient-hero-4); animation: hero-gradient-cycle-4 22s ease-in-out infinite; }
 
 .animate-fade-in-up {
   animation: fade-in-up 0.7s ease-out forwards;
